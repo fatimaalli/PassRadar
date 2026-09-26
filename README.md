@@ -3,10 +3,7 @@
 A password breach and strength scanner that runs entirely in your browser —
 no backend, no server, no password ever transmitted in full.
 
-**Live demo:** _add your GitHub Pages link here once deployed (see below)_
-
-![PassRadar screenshot](screenshot.png)
-*(replace this with an actual screenshot once you've deployed or opened it locally)*
+**Live demo:** https://fatimaalli.github.io/PassRadar/
 
 ## What it does
 
@@ -38,6 +35,29 @@ dependencies. Uses:
   so it can be called directly from the browser)
 - **`crypto.getRandomValues`** for the password generator
 
+## Project structure
+
+```
+passradar/
+├── index.html      # page structure and content
+├── css/
+│   └── style.css   # all styling
+├── js/
+│   └── script.js   # hashing, breach lookup, entropy scoring, generator
+├── README.md
+└── LICENSE
+```
+
+## Why there's no backend or database
+
+PassRadar doesn't store anything, by design. Every breach check queries
+Have I Been Pwned's hosted database live over the network — there's no
+data of ours to persist. Adding a database would only make sense for
+features like saved scan history or user accounts, and a password tool
+that remembers passwords is the opposite of what you want from one. The
+fully static, client-only architecture isn't a missing piece — it's the
+point: no server, anywhere, ever sees what you typed.
+
 ## Running it locally
 
 Because the Web Crypto API requires a secure context, don't just double-click
@@ -52,24 +72,6 @@ npx serve .
 ```
 
 Then open `http://localhost:8000` in your browser.
-
-## Deploying to GitHub Pages (free hosting)
-
-1. Push this folder as a new repo:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: PassRadar breach and strength scanner"
-   git branch -M main
-   git remote add origin https://github.com/fatimaalli/passradar.git
-   git push -u origin main
-   ```
-2. On GitHub, go to your repo's **Settings → Pages**.
-3. Under **Build and deployment**, set **Source** to `Deploy from a branch`,
-   branch `main`, folder `/ (root)`. Save.
-4. Wait a minute, then your site is live at
-   `https://fatimaalli.github.io/passradar/`.
-5. Add that link to the top of this README and to your GitHub profile pin.
 
 ## Possible extensions
 
