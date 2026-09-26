@@ -12,9 +12,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -35,17 +35,20 @@
         <p class="lede">PassRadar checks any password against known data breaches and scores its strength — entirely in
           your browser. Nothing you type ever leaves your device.</p>
 
-        <form id="scan-form" class="scan-form" autocomplete="off">
-          <label for="password-input" class="sr-only">Password to check</label>
-          <div class="input-row">
-            <input type="password" id="password-input" name="password" placeholder="Enter a password to scan" required>
-            <button type="button" id="toggle-visibility" aria-label="Show password">👁</button>
-          </div>
-          <button type="submit" class="scan-button">Scan password</button>
-        </form>
+        <div class="console-card">
+          <form id="scan-form" class="scan-form" autocomplete="off">
+            <label for="password-input" class="sr-only">Password to check</label>
+            <div class="input-row">
+              <input type="password" id="password-input" name="password" placeholder="Enter a password to scan"
+                required>
+              <button type="button" id="toggle-visibility" aria-label="Show password">👁</button>
+            </div>
+            <button type="submit" class="scan-button">Scan password</button>
+          </form>
 
-        <p class="privacy-note">Only a 5-character hash fragment is sent for the breach check — your real password stays
-          local. <a href="#how-it-works">See how.</a></p>
+          <p class="privacy-note">Only a 5-character hash fragment is sent for the breach check — your real password
+            stays local. <a href="#how-it-works">See how.</a></p>
+        </div>
       </div>
 
       <div class="radar" aria-hidden="true">
@@ -106,7 +109,7 @@
       password manager.</p>
   </footer>
 
-  <script src="JS/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
